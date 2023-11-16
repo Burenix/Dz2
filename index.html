@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function OneFunction(word) {
+            const first = document.getElementById("first").value;
+            if (word == undefined) {
+                console.log("1)Я не знаю никакого", first);
+            }
+            else {
+                console.log("1)Я не знаю никакого", word);
+            }
+        }
+        function TwoFunction() {
+            const second = document.getElementById("second").value;
+            const n = Math.random()
+            const word = second
+            const a = 1 / 2
+            if (n > a) {
+                console.log("Я знаю некое", second);
+            }
+            else {
+                console.log("2)Я не знаю никакого", second,"\n2)OneFunction, а ты знаешь", second + "?")
+                OneFunction.apply(this, [word])
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="first_function">
+        <form class="one">
+            Первая функция: 
+            <input type="text" name="ones" id="first">
+            <button onclick="OneFunction()">Отправить</button>
+        </form>
+    <br>
+    </div>
+    <div class="second_function">
+        <form class="two">
+            Вторая функция: 
+            <input type="text" name="twos" id="second">
+            <button onclick="TwoFunction()">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
